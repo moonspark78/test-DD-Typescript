@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import DropDown from './components/DropDown';
 
 function App() {
   return (
-    <div className="App">
-     
+    <div className="p-14">
+     <DropDown/>
     </div>
   );
 }
