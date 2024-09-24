@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-const DropDown = () => {
+const DropDown = ({ options } : { options : string[] }) => {
+    
     const [isOpen, setIsOpen] = useState(false)
   return (
     <div>
@@ -13,7 +14,7 @@ const DropDown = () => {
 
         {
             isOpen && 
-            <div className='bg-black rounded border text-white'>Test</div>
+            <div className='bg-black rounded border text-white px-2 py-1'>Test</div>
         }
     </div>
   )
