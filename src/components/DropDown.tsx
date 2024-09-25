@@ -1,22 +1,31 @@
 import React, { useState } from 'react'
-import { Horse} from "phosphor-react";
+import { ArrowFatDown, ArrowFatUp} from "phosphor-react";
 
 const DropDown = ({ options } : { options : string[] }) => {
 
     const [isOpen, setIsOpen] = useState(false)
+
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);  // Alterne entre ouvert et fermé
+    };
+
+
   return (
-    <div>
+    <div className='relative'>
         <button
-            onClick={() => setIsOpen(true)}
-            className='rounded text-white px-2 py-1 hover:bg-gray-400 bg-gray-500  text-xl'
+            onClick={toggleDropdown}
+            className='rounded flex items-center text-white px-2 py-1 hover:bg-gray-400 bg-gray-500  text-xl'
         >
-            DropDown
-            <Horse/>
+            <div className='mr-2'>DropDown</div>
+            <div>
+                {isOpen ? <ArrowFatUp size={16} /> : <ArrowFatDown size={16} />}
+                
+            </div>
         </button>
 
         {
             isOpen && 
-            <div className='bg-black rounded border text-white py-1'>
+            <div className='bg-black absolute rounded border text-white py-2 mt-2 w-40'>
                 <ul>
                     {options.map(option => (
                         <li className='hover:bg-blue-500 cursor-pointer px-2' key={option}>{option}</li>
