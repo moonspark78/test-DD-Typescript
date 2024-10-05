@@ -11,7 +11,7 @@ const DropDown = ({ options } : { options : string[] }) => {
 
 
   return (
-    <div className='relative'>
+    <div className='relative mb-4'>
         <button
             onClick={toggleDropdown}
             className='rounded flex items-center text-white px-2 py-1 hover:bg-gray-400 bg-gray-500  text-xl'
