@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import DropDown from './components/DropDown';
 import Input from './components/Input';
+import ColorSelector from './components/ColorSelector';
 
 function App() {
 
@@ -35,7 +36,8 @@ function App() {
         className='mt-9 border border-black  w-[300px] h-[300px] mx-auto'
         style={{ backgroundColor : `${seletColor}`}}
      >
-      </div>
+     </div>
+     <ColorSelector onSelectChange={onSelectChange}/>
     </div>
   );
 }
