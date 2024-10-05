@@ -6,10 +6,15 @@ import Input from './components/Input';
 function App() {
 
   const [color, setColor] = useState('')
+  const [seletColor, setSeletColor] = useState('')
 
 
   const onChangeColor = (e:any) =>{
     setColor(e.target.value);
+  }
+
+  const onSelectChange = (e:any) =>{
+    setSeletColor(e.target.value);
   }
 
 
@@ -25,6 +30,12 @@ function App() {
 
      </div>
      <Input onChangeColor={onChangeColor}/>
+
+     <div 
+        className='mt-9 border border-black  w-[300px] h-[300px] mx-auto'
+        style={{ backgroundColor : `${seletColor}`}}
+     >
+      </div>
     </div>
   );
 }
